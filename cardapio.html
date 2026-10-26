@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="estilos-cardapio.css">
+
+<header>
+    <div class="Nome-Pagina">
+        <h1>Lanchonete ADS</h1>
+    </div>
+    <!-- Botão do carrinho com um contador sobreposto ao ícone -->
+        <button class="botao-carrinho" type="button" aria-label="Carrinho: 0 itens">
+            <!-- Desenha o ícone do carrinho sem precisar de uma imagem externa -->
+            <svg
+                class="icone-carrinho"
+                viewBox="0 0 24 24"
+                role="img"
+                aria-hidden="true"
+            >
+                <path d="M3 3h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 8H6" />
+                <circle cx="10" cy="20" r="1.5" />
+                <circle cx="18" cy="20" r="1.5" />
+            </svg>
+
+            <!-- O JavaScript atualiza este número -->
+            <span class="contador-carrinho" id="contador-carrinho">0</span>
+        </button>
+
+        <a href="index.html" class="btn-sair">Sair</a>
+
+</header>
+
+<body>
+    <main class="vitrine-grid">
+        <article class="card-produto">
+            <img src="img/hamburger.jpg" alt="X-Burguer Clássico" class="imagem-produto">
+            <div class="conteudo-card">
+                <h3>X-Burguer Clássico</h3>
+                <p>Pão brioche, hambúrguer artesanal de 160g e queijo cheddar.</p>
+                <!-- Mantém preço e ação dentro do mesmo botão -->
+                <div class="acoes-produto">
+                    <button
+                        class="btn-adicionar"
+                        type="button"
+                        aria-label="Adicionar X-Burguer Clássico por R$ 28,00"
+                    >
+                        <span class="texto-preco">R$ 28,00</span>
+                        <span class="texto-adicionar">Adicionar</span>
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card-produto">
+            <img src="img/cachorroQuente.png" alt="Cachorro Quente" class="imagem-produto">
+            <div class="conteudo-card">
+                <h3>Cachorro Quente</h3>
+                <p>Pão brioche, salsicha e queijo cheddar.</p>
+                <!-- Botão do cachorro-quente com seu preço e descrição acessível -->
+                <div class="acoes-produto">
+                    <button
+                        class="btn-adicionar"
+                        type="button"
+                        aria-label="Adicionar Cachorro Quente por R$ 15,00"
+                    >
+                        <span class="texto-preco">R$ 15,00</span>
+                        <span class="texto-adicionar">Adicionar</span>
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card-produto">
+            <img src="img/batata.png" alt="Batata Frita" class="imagem-produto">
+            <div class="conteudo-card">
+                <h3>Batata Frita</h3>
+                <p>Batata frita crocante e salgada.</p>
+                <!-- Botão da batata frita com seu preço e descrição acessível -->
+                <div class="acoes-produto">
+                    <button
+                        class="btn-adicionar"
+                        type="button"
+                        aria-label="Adicionar Cachorro Quente por R$ 15,00"
+                    >
+                        <span class="texto-preco">R$ 15,00</span>
+                        <span class="texto-adicionar">Adicionar</span>
+                    </button>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script src="interacoes.js"></script>
+</body>

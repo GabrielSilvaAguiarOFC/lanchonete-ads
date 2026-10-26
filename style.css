@@ -1,0 +1,384 @@
+/* Reset de formatação nativa */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Centralização com Flexbox */
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+}
+
+/* Estilização do Cartão */
+.card-login {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.card-login h1 {
+    color: #e63946;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.card-login p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Organização dos Inputs */
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #d62828;
+}
+
+.card-login h1 {
+    color: #2d6a4f;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2d6a4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1b4332;
+}
+
+.mensagem-erro {
+    color: #d00000;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.aviso-lanchonete {
+    position: fixed;
+    right: 28px;
+    bottom: 24px;
+    z-index: 1000;
+    width: 310px;
+    height: 245px;
+    pointer-events: none;
+}
+
+/* O aviso começa pequeno, na posição da embalagem, e se expande para cima */
+.aviso-conteudo {
+    position: absolute;
+    right: 0;
+    bottom: 78px;
+    width: 300px;
+    padding: 18px 42px 18px 18px;
+    color: #442915;
+    background: #fffaf1;
+    border: 1px solid #e6d4b9;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(54, 34, 15, 0.2);
+    transform-origin: 90% 100%;
+    animation: aviso-sair-da-caixa 650ms cubic-bezier(.2, .85, .25, 1) both;
+    pointer-events: auto;
+}
+
+.aviso-titulo {
+    display: block;
+    margin-bottom: 7px;
+    color: #8b451f;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.aviso-texto {
+    margin: 0;
+    color: #5c5147;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.aviso-fechar {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: auto;
+    margin: 0;
+    padding: 0 5px;
+    color: #806b58;
+    background: transparent;
+    font-size: 23px;
+    line-height: 1;
+}
+
+.aviso-fechar:hover {
+    color: #b33a2b;
+    background: transparent;
+}
+
+/* Embalagem de papel kraft */
+.caixa-lanche {
+    position: absolute;
+    right: 24px;
+    bottom: 0;
+    width: 88px;
+    height: 66px;
+    perspective: 180px;
+    filter: drop-shadow(0 7px 5px rgba(45, 28, 12, 0.23));
+}
+
+.caixa-fundo {
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    width: 78px;
+    height: 38px;
+    background: #bd8650;
+    clip-path: polygon(12% 0, 88% 0, 100% 100%, 0 100%);
+    border-radius: 3px;
+}
+
+.caixa-frente {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 88px;
+    height: 28px;
+    background: linear-gradient(#d2a16b, #b77b45);
+    clip-path: polygon(0 0, 100% 0, 87% 100%, 13% 100%);
+    border-radius: 2px 2px 7px 7px;
+}
+
+.caixa-tampa {
+    position: absolute;
+    right: 3px;
+    bottom: 31px;
+    width: 82px;
+    height: 27px;
+    background: linear-gradient(145deg, #dfb681, #bb8652);
+    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+    transform-origin: 50% 100%;
+    animation: tampa-abrir 500ms 150ms ease-out both;
+}
+
+/* Hambúrguer feito com camadas CSS */
+.hamburguer {
+    position: absolute;
+    z-index: 2;
+    left: 22px;
+    bottom: 24px;
+    width: 48px;
+    height: 37px;
+    animation: lanche-saltar 550ms 300ms ease-out both;
+}
+
+.hamburguer span {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 48px;
+}
+
+.pao {
+    top: 0;
+    height: 17px;
+    background: #d79a49;
+    border: 1px solid #a9692d;
+    border-radius: 25px 25px 7px 7px;
+}
+
+.gergelim {
+    top: 5px;
+    left: 11px !important;
+    width: 3px !important;
+    height: 2px;
+    background: #fff0c5;
+    border-radius: 50%;
+    box-shadow: 9px 3px #fff0c5, 20px -1px #fff0c5, 27px 4px #fff0c5;
+}
+
+.alface {
+    top: 16px;
+    height: 5px;
+    background: #6b9c43;
+    border-radius: 5px;
+}
+
+.queijo {
+    top: 20px;
+    height: 6px;
+    background: #f2c84b;
+    clip-path: polygon(0 0, 100% 0, 87% 100%, 65% 50%, 40% 100%, 20% 50%);
+}
+
+.carne {
+    top: 24px;
+    height: 8px;
+    background: #70402b;
+    border-radius: 4px;
+}
+
+.pao-base {
+    bottom: 0;
+    height: 7px;
+    background: #d79a49;
+    border-radius: 2px 2px 8px 8px;
+}
+
+@keyframes tampa-abrir {
+    from {
+        transform: rotateX(0);
+    }
+    to {
+        transform: rotateX(68deg) translateY(-7px);
+    }
+}
+
+@keyframes lanche-saltar {
+    0% {
+        transform: translateY(12px) scale(.75);
+        opacity: 0;
+    }
+    70% {
+        transform: translateY(-7px) scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes aviso-sair-da-caixa {
+    from {
+        opacity: 0;
+        transform: translate(25px, 65px) scale(.12);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+.aviso-lanchonete.aviso-fechando .aviso-conteudo {
+    animation: aviso-voltar-para-caixa 300ms ease-in both;
+}
+
+@keyframes aviso-voltar-para-caixa {
+    to {
+        opacity: 0;
+        transform: translate(20px, 55px) scale(.12);
+    }
+}
+
+@media (max-width: 400px) {
+    .aviso-lanchonete {
+        right: 16px;
+        bottom: 16px;
+        transform: scale(.9);
+        transform-origin: bottom right;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .aviso-conteudo,
+    .caixa-tampa,
+    .hamburguer {
+        animation-duration: 1ms !important;
+    }
+}
+
+.container-login {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    /* Mantenha aqui as regras de Flexbox que já existem */
+    background-color: transparent;
+}
+
+.container-login::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background-image: url("img/fundo-lanchonete.png");
+    background-repeat: repeat;
+    background-size: 370px 370px;
+    animation: esteira-fundo 18s linear infinite;
+}
+
+.card-login {
+    position: relative;
+    z-index: 1;
+    /* Preserve os outros estilos do cartão */
+}
+
+@keyframes esteira-fundo {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 370px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .container-login::before {
+        animation: none;
+    }
+}
+
+/* AULA 02 */
